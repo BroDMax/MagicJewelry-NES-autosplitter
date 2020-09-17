@@ -28,10 +28,31 @@ state("nintendulator")
     byte reset:             0x5C137;
 }
 
-state("mesen")
+state("mesen", "v0.9.7")
 {
     byte level:             "MesenCore.dll", 0x4311838, 0x118, 0xB8, 0x90, 0x1D8, 0x08, 0x6D;
     byte reset:             "MesenCore.dll", 0x4311838, 0x118, 0xB8, 0x90, 0x1D8, 0x08, 0x6F;
+}
+
+state("mesen", "v0.9.9")
+{
+    byte level:             "MesenCore.dll", 0x42E0F30, 0xB8, 0x58, 0x6D;
+    byte reset:             "MesenCore.dll", 0x42E0F30, 0xB8, 0x58, 0x6F;
+}
+
+init
+{
+    var module = modules.Single(x => String.Equals(x.ModuleName, "mesen.exe", StringComparison.OrdinalIgnoreCase));
+    
+    switch(module.ModuleMemorySize)
+    {
+        case 10067968:
+            version = "v0.9.7";
+            break;
+        case 11714560:
+            version = "v0.9.9";
+            break;
+    }
 }
 
 start
