@@ -8,7 +8,7 @@ The autosplitter for [LiveSplit](https://github.com/LiveSplit/LiveSplit/releases
 - [x] Mednafen v1.21.3 [Download](https://mednafen.github.io/)
 - [x] Nintendulator v0.985 _(32-bit)_ [Download](https://www.qmtpro.com/~nes/nintendulator/#downloads)
 - [x] puNES v0.104 _(i686: Direct3D and OpenGL; x64 only Direct3D)_ [Download](https://github.com/punesemu/puNES/releases)
-- [x] Mesen v0.9.7 [Download](https://www.mesen.ca/#Downloads)
+- [x] Mesen v0.9.7, v0.9.9 [Download](https://github.com/SourMesen/Mesen/releases)
 
 ## Installing
 1. Download [ASL file](https://github.com/BroDMax/MagicJewelry-NES-autosplitter/archive/master.zip)
