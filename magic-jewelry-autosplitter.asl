@@ -34,7 +34,7 @@ state("mesen", "v0.9.7")
     byte reset:             "MesenCore.dll", 0x4311838, 0x118, 0xB8, 0x90, 0x1D8, 0x08, 0x6F;
 }
 
-state("mesen", "v0.9.9")
+state("mesen", "v0.9.9") 
 {
     byte level:             "MesenCore.dll", 0x42E0F30, 0xB8, 0x58, 0x6D;
     byte reset:             "MesenCore.dll", 0x42E0F30, 0xB8, 0x58, 0x6F;
@@ -42,7 +42,10 @@ state("mesen", "v0.9.9")
 
 init
 {
-    var module = modules.Single(x => String.Equals(x.ModuleName, "mesen.exe", StringComparison.OrdinalIgnoreCase));
+    var module = modules.SingleOrDefault(x => String.Equals(x.ModuleName, "mesen.exe", StringComparison.OrdinalIgnoreCase));
+
+    if (module == null)
+        return;
     
     switch(module.ModuleMemorySize)
     {
